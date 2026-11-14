@@ -6,7 +6,7 @@ const S = { state: null, charts: {}, range: "LIVE", activity: null, actAll: null
   tab: "home", screen: null, stack: [], loading: true, report: null, rate: null, delayed: false, focus: null, okOnce: false, toast: null, q: "" };
 const reduce = () => !!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
 
-// ---------- helpers. Coin names come from outside: text nodes only, and only https://fomo.family/ links
+// ---------- helpers. Coin names come from outside: text nodes only, and only links on the FOMO host (checked in safeUrl)
 function h(tag, attrs, ...kids) {
   const e = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs || {})) {
