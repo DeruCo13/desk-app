@@ -120,7 +120,7 @@ async function refreshState() {
   } catch (e) {
     S.err = e.message || "offline"; S.loading = S.state ? false : S.loading; render();
   }
-  S.due.state = Date.now() + stateEvery();
+  S.due.state = Date.now() + (S.state ? stateEvery() : 5000);   // never loaded yet: retry fast
   S.nextRetry = S.due.state;
 }
 async function loadRange(r) {
